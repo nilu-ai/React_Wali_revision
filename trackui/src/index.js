@@ -9,7 +9,15 @@ import {RouterProvider, createBrowserRouter} from "react-router-dom"
 import Authadmin from './Components/auth.js';
 import User from './Components/User.js';
 import Deliver from './Components/Deliver.js';
-const route=createBrowserRouter([{
+import TestComponent from './TestComponent.js';
+const route=createBrowserRouter([
+  
+{
+  path:"/test",
+  element:<TestComponent/>
+}  
+ , 
+  {
  path:"",
  element:<App/>,
 children:[{
