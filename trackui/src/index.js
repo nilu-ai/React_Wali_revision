@@ -10,11 +10,22 @@ import Authadmin from './Components/auth.js';
 import User from './Components/User.js';
 import Deliver from './Components/Deliver.js';
 import TestComponent from './TestComponent.js';
+import Createsubject from './Subjectadd.js';
+import Chapteradd from './Chapteradd.js';
 const route=createBrowserRouter([
   
 {
   path:"/test",
   element:<TestComponent/>
+}  
+ , 
+ {
+  path:"/subject",
+  element:<Createsubject/>
+}  ,
+{
+  path:"/chapter",
+  element:<Chapteradd/>
 }  
  , 
   {
