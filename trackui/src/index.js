@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Header from './Components/header.js';
+import Header from './Components/header.js'
 import Map from './Components/map.js';
 import {RouterProvider, createBrowserRouter} from "react-router-dom"
 import Authadmin from './Components/auth.js';
@@ -12,21 +12,28 @@ import Deliver from './Components/Deliver.js';
 import TestComponent from './TestComponent.js';
 import Createsubject from './Subjectadd.js';
 import Chapteradd from './Chapteradd.js';
+
 const route=createBrowserRouter([
-  
-{
-  path:"/test",
-  element:<TestComponent/>
-}  
- , 
- {
-  path:"/subject",
-  element:<Createsubject/>
-}  ,
-{
-  path:"/chapter",
-  element:<Chapteradd/>
-}  
+  {
+    path:"/prolearning/",
+    element:<App/>,
+    children:[
+      {
+        path:"test",
+        element:<TestComponent/>
+      }  
+       , 
+       {
+        path:"subject",
+        element:<Createsubject/>
+      }  ,
+      {
+        path:"chapter",
+        element:<Chapteradd/>
+      }  
+    ]
+  }  
+
  , 
   {
  path:"",
