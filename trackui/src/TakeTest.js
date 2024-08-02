@@ -40,7 +40,8 @@ axios.get(`${process.env.REACT_APP_API_URL}/api/physicaltest/physical-tests/`).t
         <Header isSideNavOpen={isSideNavOpen} setIsSideNavOpen={setIsSideNavOpen} />
         <div className='p-2'>
        {console.log(testdata)}
-     {testdata &&  <div class="bg-background rounded-lg border p-6 w-full max-w-2xl">
+<div className='flex flex-row justify-center mx-auto w-full'>
+         {testdata ?  <div class="bg-background  rounded-lg border p-6 w-full max-w-2xl">
   <div class="flex flex-col gap-4">
     <div class="flex items-center justify-between">
       <div class="flex flex-col">
@@ -71,17 +72,20 @@ axios.get(`${process.env.REACT_APP_API_URL}/api/physicaltest/physical-tests/`).t
       <div class="flex items-center justify-between">
         <div class="flex flex-col gap-1">
           <div class="text-lg font-medium">Questions:</div>
-          <div className='flex flex-row gap-8 px-4'>
-          <div>1: {testdata.questions[0].question}</div>
-          <div>{testdata.questions[0].score}</div>
-          </div>
+         
         </div>
-       
+        <div>Marks</div>
           
         </div>
+        {/* Question  list mapping */}
+        <div className='flex flex-row gap-8 px-4'>
+    <div className='flex flex-row justify-between mx-auto w-full'>      <div>1: {testdata.questions[0].question}</div>
+    <div>{testdata.questions[0].score}</div></div>
+          </div>
+          
       </div>
     </div>
-   <div class="flex justify-between items-center">
+   <div class="flex justify-between items-center my-4">
       <div class="flex items-center gap-2">
         <input
           class="flex h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full"
@@ -110,7 +114,8 @@ axios.get(`${process.env.REACT_APP_API_URL}/api/physicaltest/physical-tests/`).t
         <span>Submit </span>
       </button>
     </div>
-  </div>}
+  </div> : <Loading/>}
+</div>
 </div>
           </div>
           
